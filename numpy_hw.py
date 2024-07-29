@@ -59,7 +59,7 @@ def earthquake_5():
     
     earthquakes_csv_file_path = './data/earthquakes1970-2014.csv'
     data = np.genfromtxt(earthquakes_csv_file_path, delimiter=',', dtype=None, names=True, skip_header=1, encoding='utf-8')
-    data = np.array2string(data, separtor=' '))
+    
     
     
     
