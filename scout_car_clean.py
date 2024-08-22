@@ -1,4 +1,4 @@
-#!usr/bin/env Python3
+#!/usr/bin/env python3
 
 import pandas as pd
 import numpy as np
@@ -22,7 +22,7 @@ def clean_scout_car():
 
 
     # skip columns
-    df.drop(['entertainment_media', 'safety_security', 'comfort_convenience', 'extras', 'kw'],axis=1,inplace=True)
+    df.drop(['entertainment_media', 'safety_security', 'comfort_convenience', 'extras'],axis=1,inplace=True)
 
     
     # fill nulls with 'none'
@@ -47,26 +47,13 @@ def clean_scout_car():
     df['registration_month'] = df['registration_month'].replace('-', 'none')
     df['registration_year'] = df['registration_year'].replace('-', 'none')
 
+    # kw from hp
+    df['kw'] = df['hp'].str.extract('(\d+)').copy()
+    df['kw'] = df['kw'].fillna('none').copy()
 
-        
-
-
-
-
-
-
+    df.to_csv('./data/scout_car_cleaned.csv')
+    
 
 
-
-
-
-
-
-
-
-
-
-
-
-if '__name__' == '__main__':
-    ...
+if __name__ == "__main__":
+    clean_scout_car()
