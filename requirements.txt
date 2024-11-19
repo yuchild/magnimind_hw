@@ -9,7 +9,9 @@ spacy==3.8.2
 scikit-learn==1.5.2
 spacy==3.8.2
 tensorflow==2.18.0
+tensorflow-cpu==2.18.0
 tf-keras==2.18.0
 transformers==4.46.1
 torch==2.5.1
 vaderSentiment==3.3.2
+yfinance==0.2.49
